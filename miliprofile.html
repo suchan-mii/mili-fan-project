@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Mili Profile</title>
+    <script src="jquery-4.0.0.js"></script>
+</head>
+
+<body class="dark-mode" style="margin:0; font-family:Georgia, serif; color:#eee; background-image:url('milicovers.jpg'); background-size:cover; background-position:center; background-attachment:fixed; background-repeat:no-repeat; min-height:100vh;">
+
+<div class="overlay" style="min-height:100vh; display:flex; flex-direction:column;">
+
+<div style="padding:15px 20px; border-bottom:1px solid #444; display:flex; justify-content:flex-start; flex-wrap:wrap; gap:10px;">
+    <a href="mili.html" style="color:#000; background:#c9a24d; text-decoration:none; font-size:clamp(14px, 3.5vw, 18px); padding:8px 16px; border-radius:6px; display:inline-block; font-weight:bold; white-space:nowrap;">&larr; Back to Home</a>
+    <a href="mili.html" style="color:#c9a24d; background:#2a2a35; text-decoration:none; font-size:clamp(14px, 3.5vw, 18px); padding:8px 16px; border-radius:6px; display:inline-block; font-weight:bold; white-space:nowrap; border:1px solid #c9a24d;">Home</a>
+    <a href="milicatalog.php" style="color:#000; background:#c9a24d; text-decoration:none; font-size:clamp(14px, 3.5vw, 18px); padding:8px 16px; border-radius:6px; display:inline-block; font-weight:bold; white-space:nowrap;">Song Catalog</a>
+    <button class="theme-toggle" style="background:#2a2a35; border:1px solid #c9a24d; font-size:clamp(14px, 3.5vw, 18px); padding:8px 16px; border-radius:6px; display:inline-block; font-weight:bold; white-space:nowrap; cursor:pointer; color:#c9a24d;">🌙 Dark Mode</button>
+</div>
+
+<style>
+    body.light-mode {
+        color: #1a1a1a !important;
+    }
+    body.light-mode .overlay {
+        background: rgba(255, 255, 255, 0.85) !important;
+    }
+    body.light-mode .info-card {
+        background: rgba(255, 255, 255, 0.9) !important;
+    }
+    body.light-mode .info-card p,
+    body.light-mode .info-card li,
+    body.light-mode .info-card span:not(.style-tag) {
+        color: #333 !important;
+    }
+    body.light-mode .member-item {
+        border-bottom: 1px solid #ccc !important;
+    }
+    body.light-mode .work-item {
+        border-bottom: 1px solid #ccc !important;
+    }
+    body.light-mode .album-item {
+        border-bottom: 1px solid #ccc !important;
+    }
+    body.light-mode .style-tag {
+        background: #e0e0e0 !important;
+    }
+    body.light-mode .band-desc {
+        color: #555 !important;
+    }
+    .overlay {
+        background: rgba(0, 0, 0, 0.85);
+    }
+    body.dark-mode .overlay {
+        background: rgba(0, 0, 0, 0.85);
+    }
+</style>
+
+<div style="display:flex; flex-direction:column; align-items:center; padding:clamp(20px, 4vh, 40px) clamp(15px, 4vw, 30px); width:100%; box-sizing:border-box;">
+
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:30px; width:100%;">
+        <div class="profile-image" style="width:clamp(120px, 25vw, 180px); height:clamp(120px, 25vw, 180px); border-radius:50%; background-image:url('https://images.squarespace-cdn.com/content/v1/52143a7ae4b0f9bd8308dc73/467220c7-6c9f-46fd-b659-f75020ab4aea/mili_group_fix.jpg?format=1000w'); background-size:cover; background-position:center; border:4px solid #c9a24d; margin-bottom:15px; opacity:0;"></div>
+        <h1 class="band-name" style="font-size:clamp(32px, 8vw, 48px); margin:0; color:#c9a24d; line-height:1.2; opacity:0;">Mili</h1>
+        <p class="band-desc" style="font-size:clamp(16px, 4vw, 20px); color:#ccc; margin:8px 0 3px; opacity:0;">Japanese/Tokyo-based indie classical ensemble</p>
+        <p class="band-year" style="font-size:clamp(13px, 3vw, 15px); color:#888; margin:0; opacity:0;">Formed 2012 · Active</p>
+    </div>
+
+    <div style="max-width:1200px; width:100%; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:clamp(15px, 3vw, 25px); padding:0; box-sizing:border-box;">
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">About <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <p class="card-content" style="line-height:1.7; color:#ddd; font-size:clamp(14px, 3.5vw, 16px); margin:0;">Mili is a Japanese indie music group known for their unique blend of classical, electronic, and progressive sounds. Their music features intricate compositions, ethereal vocals, and deeply emotional storytelling. They are widely recognized for their contributions to game soundtracks, including Library of Ruina, Limbus Company, and various rhythm games.</p>
+        </div>
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">Members <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <div class="card-content">
+                <ul style="list-style-type:none; padding:0; margin:0;">
+                    <li class="member-item" style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #333;">
+                        <strong style="color:#c9a24d; font-size:clamp(15px, 3.5vw, 17px);">Cassie Wei</strong><br>
+                        <span style="color:#aaa; font-size:clamp(13px, 3vw, 15px);">Vocals, songwriting</span>
+                    </li>
+                    <li class="member-item" style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #333;">
+                        <strong style="color:#c9a24d; font-size:clamp(15px, 3.5vw, 17px);">Yamato Kasai</strong><br>
+                        <span style="color:#aaa; font-size:clamp(13px, 3vw, 15px);">Songwriting, arrangements, guitar</span>
+                    </li>
+                    <li class="member-item" style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #333;">
+                        <strong style="color:#c9a24d; font-size:clamp(15px, 3.5vw, 17px);">Yukihito</strong><br>
+                        <span style="color:#aaa; font-size:clamp(13px, 3vw, 15px);">Bass, arrangements</span>
+                    </li>
+                    <li class="member-item" style="margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid #333;">
+                        <strong style="color:#c9a24d; font-size:clamp(15px, 3.5vw, 17px);">Shoto Yoshida</strong><br>
+                        <span style="color:#aaa; font-size:clamp(13px, 3vw, 15px);">Drums, arrangements</span>
+                    </li>
+                    <li class="member-item" style="margin-bottom:0; padding-bottom:0;">
+                        <strong style="color:#c9a24d; font-size:clamp(15px, 3.5vw, 17px);">Ao Fujimori</strong><br>
+                        <span style="color:#aaa; font-size:clamp(13px, 3vw, 15px);">Illustrations, 2D animation</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">Notable Works <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <div class="card-content">
+                <ul style="list-style-type:none; padding:0; margin:0;">
+                    <li class="work-item" style="margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #333; display:flex; align-items:center; gap:8px;">
+                        <span style="color:#c9a24d; font-size:16px;">◆</span> <span style="font-size:clamp(13px, 3vw, 15px);">Library of Ruina Soundtrack</span>
+                    </li>
+                    <li class="work-item" style="margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #333; display:flex; align-items:center; gap:8px;">
+                        <span style="color:#c9a24d; font-size:16px;">◆</span> <span style="font-size:clamp(13px, 3vw, 15px);">Limbus Company Soundtrack</span>
+                    </li>
+                    <li class="work-item" style="margin-bottom:10px; padding-bottom:10px; border-bottom:1px solid #333; display:flex; align-items:center; gap:8px;">
+                        <span style="color:#c9a24d; font-size:16px;">◆</span> <span style="font-size:clamp(13px, 3vw, 15px);">Millennium Mother</span>
+                    </li>
+                    <li class="work-item" style="margin-bottom:0; display:flex; align-items:center; gap:8px;">
+                        <span style="color:#c9a24d; font-size:16px;">◆</span> <span style="font-size:clamp(13px, 3vw, 15px);">Key Ingredient</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">Musical Style <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <div class="card-content">
+                <p style="line-height:1.7; color:#ddd; font-size:clamp(14px, 3.5vw, 16px); margin-bottom:15px;">Classical crossover, art pop, electronic, progressive rock, chamber music, post-rock</p>
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <span class="style-tag" style="display:inline-block; background:#2a2a35; color:#c9a24d; padding:5px 10px; border-radius:20px; font-size:clamp(12px, 2.5vw, 13px); cursor:pointer;">Orchestral</span>
+                    <span class="style-tag" style="display:inline-block; background:#2a2a35; color:#c9a24d; padding:5px 10px; border-radius:20px; font-size:clamp(12px, 2.5vw, 13px); cursor:pointer;">Electronic</span>
+                    <span class="style-tag" style="display:inline-block; background:#2a2a35; color:#c9a24d; padding:5px 10px; border-radius:20px; font-size:clamp(12px, 2.5vw, 13px); cursor:pointer;">Cinematic</span>
+                    <span class="style-tag" style="display:inline-block; background:#2a2a35; color:#c9a24d; padding:5px 10px; border-radius:20px; font-size:clamp(12px, 2.5vw, 13px); cursor:pointer;">Experimental</span>
+                    <span class="style-tag" style="display:inline-block; background:#2a2a35; color:#c9a24d; padding:5px 10px; border-radius:20px; font-size:clamp(12px, 2.5vw, 13px); cursor:pointer;">Indie Classical</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">Discography <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <div class="card-content">
+                <div style="display:flex; flex-direction:column; gap:8px;">
+                    <div class="album-item" style="display:flex; justify-content:space-between; border-bottom:1px solid #333; padding-bottom:5px; cursor:pointer;">
+                        <span style="font-size:clamp(13px, 3vw, 15px);">Mag Mell</span>
+                        <span style="color:#c9a24d; font-size:clamp(13px, 3vw, 15px);">2014</span>
+                    </div>
+                    <div class="album-item" style="display:flex; justify-content:space-between; border-bottom:1px solid #333; padding-bottom:5px; cursor:pointer;">
+                        <span style="font-size:clamp(13px, 3vw, 15px);">Millennium Mother</span>
+                        <span style="color:#c9a24d; font-size:clamp(13px, 3vw, 15px);">2016</span>
+                    </div>
+                    <div class="album-item" style="display:flex; justify-content:space-between; border-bottom:1px solid #333; padding-bottom:5px; cursor:pointer;">
+                        <span style="font-size:clamp(13px, 3vw, 15px);">Key Ingredient</span>
+                        <span style="color:#c9a24d; font-size:clamp(13px, 3vw, 15px);">2019</span>
+                    </div>
+                    <div class="album-item" style="display:flex; justify-content:space-between; border-bottom:1px solid #333; padding-bottom:5px; cursor:pointer;">
+                        <span style="font-size:clamp(13px, 3vw, 15px);">To Kill a Living Book</span>
+                        <span style="color:#c9a24d; font-size:clamp(13px, 3vw, 15px);">2020</span>
+                    </div>
+                    <div class="album-item" style="display:flex; justify-content:space-between; cursor:pointer;">
+                        <span style="font-size:clamp(13px, 3vw, 15px);">Limbus Company OST</span>
+                        <span style="color:#c9a24d; font-size:clamp(13px, 3vw, 15px);">2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-card" style="background:rgba(20,20,30,0.9); border-radius:12px; padding:20px; border-left:5px solid #c9a24d; height:fit-content; opacity:0;">
+            <h2 style="color:#c9a24d; margin-top:0; margin-bottom:15px; font-size:clamp(20px, 4vw, 24px); cursor:pointer;">External Links <span style="font-size:14px; color:#888;">(click to toggle)</span></h2>
+            <div class="card-content">
+                <div style="display:flex; flex-direction:column; gap:10px;">
+                    <a href="https://projectmili.com/" target="_blank" class="external-link" style="color:#c9a24d; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:clamp(14px, 3.5vw, 16px);">
+                        <span style="font-size:18px;">🎵</span> Official Website
+                    </a>
+                    <a href="https://www.youtube.com/@ProjectMili" target="_blank" class="external-link" style="color:#c9a24d; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:clamp(14px, 3.5vw, 16px);">
+                        <span style="font-size:18px;">📺</span> YouTube
+                    </a>
+                    <a href="https://x.com/ProjectMili" target="_blank" class="external-link" style="color:#c9a24d; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:clamp(14px, 3.5vw, 16px);">
+                        <span style="font-size:18px;">🐦</span> X / Twitter
+                    </a>
+                    <a href="https://www.instagram.com/projectmili" target="_blank" class="external-link" style="color:#c9a24d; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:clamp(14px, 3.5vw, 16px);">
+                        <span style="font-size:18px;">📷</span> Instagram
+                    </a>
+                    <a href="https://open.spotify.com/user/projectmili" target="_blank" class="external-link" style="color:#c9a24d; text-decoration:none; display:flex; align-items:center; gap:10px; font-size:clamp(14px, 3.5vw, 16px);">
+                        <span style="font-size:18px;">💿</span> Spotify
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="margin-top:clamp(30px, 5vh, 40px); text-align:center; padding:15px; color:#888; font-size:clamp(12px, 3vw, 14px); width:100%; box-sizing:border-box;">
+        &copy; 2026 Kantahan & Jamming Club &mdash; A Personal Archive of Mili (For educational purposes only.)
+    </div>
+
+</div>
+
+</div>
+
+<script>
+$(document).ready(function(){
+    var theme = localStorage.getItem('theme') || 'dark';
+    $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
+    $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+    
+    $('.theme-toggle').click(function(){
+        if($('body').hasClass('dark-mode')) {
+            $('body').removeClass('dark-mode').addClass('light-mode');
+            $(this).text('☀️ Light Mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            $('body').removeClass('light-mode').addClass('dark-mode');
+            $(this).text('🌙 Dark Mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+    
+    $('.profile-image').delay(200).animate({opacity: 1}, 800);
+    $('.band-name').delay(400).animate({opacity: 1}, 800);
+    $('.band-desc').delay(600).animate({opacity: 1}, 800);
+    $('.band-year').delay(800).animate({opacity: 1}, 800);
+    
+    $('.info-card').each(function(i){
+        $(this).delay(1000 + (i * 200)).animate({opacity: 1}, 600);
+    });
+    
+    $('.info-card h2').click(function(){
+        $(this).siblings('.card-content').slideToggle(300);
+    });
+    
+    $('.member-item').hover(
+        function(){ $(this).css('background', 'rgba(201, 162, 77, 0.1)'); },
+        function(){ $(this).css('background', 'transparent'); }
+    );
+    
+    $('.album-item').click(function(){
+        var album = $(this).find('span:first').text();
+        var year = $(this).find('span:last').text();
+        alert(album + ' was released in ' + year);
+    });
+    
+    $('.style-tag').click(function(){
+        var tag = $(this).text();
+        $(this).toggleClass('active');
+        if($(this).hasClass('active')) {
+            $(this).css({'background':'#c9a24d', 'color':'#000'});
+        } else {
+            if($('body').hasClass('light-mode')) {
+                $(this).css({'background':'#e0e0e0', 'color':'#c9a24d'});
+            } else {
+                $(this).css({'background':'#2a2a35', 'color':'#c9a24d'});
+            }
+        }
+    });
+    
+    $('.external-link').hover(
+        function(){ $(this).css('padding-left', '10px'); },
+        function(){ $(this).css('padding-left', '0'); }
+    );
+    
+    $('.work-item').hover(
+        function(){ $(this).find('span:last').css('color', '#fff'); },
+        function(){ $(this).find('span:last').css('color', ''); }
+    );
+});
+</script>
+
+</body>
+</html>

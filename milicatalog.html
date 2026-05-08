@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Mili Song Catalog</title>
+    <script src="jquery-4.0.0.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-image: url('milicovers.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+        
+        body.dark-mode {
+            color: #eee;
+        }
+        
+        body.light-mode {
+            color: #1a1a1a;
+        }
+        
+        .overlay {
+            min-height: 100vh;
+        }
+        
+        body.dark-mode .overlay {
+            background: rgba(0, 0, 0, 0.75);
+        }
+        
+        body.light-mode .overlay {
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        body.light-mode .header {
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .header-left {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .home-link, .home-link-alt {
+            color: #000;
+            background: #c9a24d;
+            text-decoration: none;
+            font-size: clamp(14px, 3.5vw, 16px);
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .home-link:hover {
+            background: #d4ad5e;
+        }
+        
+        .home-link-alt {
+            background: #2a2a35;
+            color: #c9a24d;
+            border: 1px solid #c9a24d;
+        }
+        
+        body.light-mode .home-link-alt {
+            background: #e0e0e0;
+        }
+        
+        .home-link-alt:hover {
+            background: #c9a24d;
+            color: #000;
+        }
+        
+        .filter-btn {
+            background: #2a2a35;
+            color: #c9a24d;
+            border: 1px solid #c9a24d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        body.light-mode .filter-btn {
+            background: #e0e0e0;
+            color: #c9a24d;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #c9a24d;
+            color: #000;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 240px));
+            justify-content: center;
+            gap: clamp(20px, 4vw, 40px);
+            padding: clamp(20px, 5vw, 60px);
+        }
+        
+        .song-card {
+            text-decoration: none;
+            opacity: 0;
+        }
+        
+        .song-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            transition: transform 0.3s;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #2a2a35;
+        }
+        
+        .song-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .song-info {
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        
+        body.dark-mode .song-info {
+            background: rgba(0, 0, 0, 0.75);
+        }
+        
+        body.light-mode .song-info {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .song-title {
+            font-size: clamp(14px, 3.5vw, 16px);
+        }
+        
+        body.dark-mode .song-title {
+            color: #fff;
+        }
+        
+        body.light-mode .song-title {
+            color: #1a1a1a;
+        }
+        
+        .song-album {
+            font-size: clamp(11px, 3vw, 13px);
+            color: #c9a24d;
+            word-break: break-word;
+        }
+        
+        .song-genre {
+            font-size: clamp(10px, 2.5vw, 11px);
+            color: #888;
+            margin-top: 3px;
+        }
+        
+        .search-box {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #c9a24d;
+            font-size: 14px;
+            width: 200px;
+        }
+        
+        body.dark-mode .search-box {
+            background: #2a2a35;
+            color: #fff;
+        }
+        
+        body.light-mode .search-box {
+            background: #fff;
+            color: #1a1a1a;
+        }
+        
+        .search-box::placeholder {
+            color: #888;
+        }
+        
+        .year-badge {
+            display: inline-block;
+            background: #c9a24d;
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-left: 6px;
+        }
+        
+        .genre-badge {
+            display: inline-block;
+            background: #2a2a35;
+            color: #c9a24d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: bold;
+            border: 1px solid #c9a24d;
+        }
+        
+        body.light-mode .genre-badge {
+            background: #e0e0e0;
+        }
+        
+        .theme-toggle {
+            background: #2a2a35;
+            color: #c9a24d;
+            border: 1px solid #c9a24d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        body.light-mode .theme-toggle {
+            background: #e0e0e0;
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .sort-select {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #c9a24d;
+            font-size: 14px;
+            cursor: pointer;
+            background: #2a2a35;
+            color: #c9a24d;
+        }
+        
+        body.light-mode .sort-select {
+            background: #e0e0e0;
+            color: #c9a24d;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="overlay">
+        <div class="header">
+            <div class="header-left">
+                <a href="mili.html" class="home-link">&larr; Back to Home</a>
+                <a href="mili.html" class="home-link-alt">Home</a>
+            </div>
+            <div class="header-right">
+                <input type="text" class="search-box" placeholder="Search songs...">
+                <select class="sort-select">
+                    <option value="default">Default Order</option>
+                    <option value="title-asc">Title A-Z</option>
+                    <option value="title-desc">Title Z-A</option>
+                    <option value="year-desc">Newest First</option>
+                    <option value="year-asc">Oldest First</option>
+                </select>
+                <button class="theme-toggle">🌙 Dark Mode</button>
+            </div>
+        </div>
+        
+        <div style="padding:0 20px 10px 20px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="color:#888; font-size:13px; display:flex; align-items:center;">Year:</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="2020">2020</button>
+            <button class="filter-btn" data-filter="2021">2021</button>
+            <button class="filter-btn" data-filter="2023">2023</button>
+            <button class="filter-btn" data-filter="2024">2024</button>
+            <button class="filter-btn" data-filter="2025">2025</button>
+            <button class="filter-btn" data-filter="2026">2026</button>
+        </div>
+        
+        <div style="padding:0 20px 10px 20px; display:flex; gap:10px; flex-wrap:wrap;">
+            <span style="color:#888; font-size:13px; display:flex; align-items:center;">Genre:</span>
+            <button class="filter-btn genre-filter active" data-genre="all">All</button>
+            <button class="filter-btn genre-filter" data-genre="Orchestral">Orchestral</button>
+            <button class="filter-btn genre-filter" data-genre="Ballad">Ballad</button>
+            <button class="filter-btn genre-filter" data-genre="Duet">Duet</button>
+            <button class="filter-btn genre-filter" data-genre="Pop">Pop</button>
+            <button class="filter-btn genre-filter" data-genre="Acoustic">Acoustic</button>
+            <button class="filter-btn genre-filter" data-genre="Dream Pop">Dream Pop</button>
+            <button class="filter-btn genre-filter" data-genre="Nostalgia">Nostalgia</button>
+            <button class="filter-btn genre-filter" data-genre="Rock/Electronic">Rock/Electronic</button>
+            <button class="filter-btn genre-filter" data-genre="Ambient">Ambient</button>
+        </div>
+        
+        <div class="grid-container" id="songGrid"></div>
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+        var theme = localStorage.getItem('theme') || 'dark';
+        $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
+        $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+        
+        $('.theme-toggle').click(function(){
+            if($('body').hasClass('dark-mode')) {
+                $('body').removeClass('dark-mode').addClass('light-mode');
+                $(this).text('☀️ Light Mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                $('body').removeClass('light-mode').addClass('dark-mode');
+                $(this).text('🌙 Dark Mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        $.getJSON('data.json', function(data) {
+            var songs = data.songs;
+            var $grid = $('#songGrid');
+            
+            songs.forEach(function(song) {
+                var genreHtml = song.genre ? '<div class="song-genre"><span class="genre-badge">' + song.genre + '</span></div>' : '';
+                var yearHtml = song.year ? '<span class="year-badge">' + song.year + '</span>' : '';
+                
+                var $card = $('<a href="song.html?song=' + song.slug + '" class="song-card" data-year="' + (song.year || '') + '" data-title="' + song.title + '" data-genre="' + (song.genre || '') + '" data-slug="' + song.slug + '">' +
+                    '<div class="song-image" style="background-image: url(\'' + song.cover_image + '\');">' +
+                        '<div class="song-info">' +
+                            '<div class="song-title">' + song.title + yearHtml + '</div>' +
+                            '<div class="song-album">' + song.album + '</div>' +
+                            genreHtml +
+                        '</div>' +
+                    '</div>' +
+                '</a>');
+                
+                $grid.append($card);
+            });
+            
+            $('.song-card').each(function(i){
+                $(this).delay(i * 100).animate({opacity: 1}, 500);
+            });
+            
+            var activeYearFilter = 'all';
+            var activeGenreFilter = 'all';
+            
+            function applyFilters() {
+                $('.song-card').each(function(){
+                    var yearMatch = activeYearFilter === 'all' || $(this).data('year') == activeYearFilter;
+                    var genreMatch = activeGenreFilter === 'all' || $(this).data('genre') === activeGenreFilter;
+                    
+                    if(yearMatch && genreMatch) {
+                        $(this).fadeIn(300);
+                    } else {
+                        $(this).fadeOut(300);
+                    }
+                });
+            }
+            
+            $('.filter-btn:not(.genre-filter)').click(function(){
+                $('.filter-btn:not(.genre-filter)').removeClass('active');
+                $(this).addClass('active');
+                activeYearFilter = $(this).data('filter');
+                applyFilters();
+            });
+            
+            $('.genre-filter').click(function(){
+                $('.genre-filter').removeClass('active');
+                $(this).addClass('active');
+                activeGenreFilter = $(this).data('genre');
+                applyFilters();
+            });
+            
+            $('.search-box').on('keyup', function(){
+                var searchTerm = $(this).val().toLowerCase();
+                
+                $('.song-card').each(function(){
+                    var title = $(this).data('title').toLowerCase();
+                    if(title.indexOf(searchTerm) > -1) {
+                        $(this).fadeIn(300);
+                    } else {
+                        $(this).fadeOut(300);
+                    }
+                });
+            });
+            
+            $('.sort-select').change(function(){
+                var sortType = $(this).val();
+                var cards = $('.song-card').get();
+                
+                cards.sort(function(a, b){
+                    var aTitle = $(a).data('title');
+                    var bTitle = $(b).data('title');
+                    var aYear = $(a).data('year');
+                    var bYear = $(b).data('year');
+                    
+                    switch(sortType) {
+                        case 'title-asc':
+                            return aTitle.localeCompare(bTitle);
+                        case 'title-desc':
+                            return bTitle.localeCompare(aTitle);
+                        case 'year-desc':
+                            return bYear - aYear;
+                        case 'year-asc':
+                            return aYear - bYear;
+                        default:
+                            return 0;
+                    }
+                });
+                
+                $.each(cards, function(i, card){
+                    $grid.append(card);
+                });
+            });
+            
+            $('.song-card').hover(
+                function(){ 
+                    if($('body').hasClass('dark-mode')) {
+                        $(this).find('.song-info').css('background', 'rgba(201, 162, 77, 0.3)'); 
+                    } else {
+                        $(this).find('.song-info').css('background', 'rgba(201, 162, 77, 0.15)'); 
+                    }
+                },
+                function(){ 
+                    if($('body').hasClass('dark-mode')) {
+                        $(this).find('.song-info').css('background', 'rgba(0, 0, 0, 0.75)'); 
+                    } else {
+                        $(this).find('.song-info').css('background', 'rgba(255, 255, 255, 0.9)'); 
+                    }
+                }
+            );
+        });
+    });
+    </script>
+</body>
+</html>

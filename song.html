@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title id="pageTitle">Song</title>
+    <script src="jquery-4.0.0.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            background-image: url('milicovers.jpg');
+        }
+        
+        body.dark-mode {
+            color: #eee;
+        }
+        
+        body.light-mode {
+            color: #1a1a1a;
+        }
+        
+        .overlay {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body.dark-mode .overlay {
+            background: rgba(0, 0, 0, 0.75);
+        }
+        
+        body.light-mode .overlay {
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .header {
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        body.light-mode .header {
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .header-left {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .back-link, .home-link {
+            color: #000;
+            background: #c9a24d;
+            text-decoration: none;
+            font-size: clamp(14px, 3.5vw, 16px);
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: inline-block;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        
+        .back-link:hover {
+            background: #d4ad5e;
+        }
+        
+        .home-link {
+            background: #2a2a35;
+            color: #c9a24d;
+            border: 1px solid #c9a24d;
+        }
+        
+        body.light-mode .home-link {
+            background: #e0e0e0;
+        }
+        
+        .home-link:hover {
+            background: #c9a24d;
+            color: #000;
+        }
+        
+        .header-right {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .favorite-btn {
+            background: transparent;
+            color: #c9a24d;
+            border: 2px solid #c9a24d;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: clamp(14px, 3.5vw, 16px);
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap;
+        }
+        
+        .favorite-btn:hover {
+            background: #c9a24d;
+            color: #000;
+        }
+        
+        .favorite-btn.favorited {
+            background: #c9a24d;
+            color: #000;
+        }
+        
+        .theme-toggle {
+            background: #2a2a35;
+            color: #c9a24d;
+            border: 1px solid #c9a24d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        
+        body.light-mode .theme-toggle {
+            background: #e0e0e0;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: clamp(40px, 10vh, 100px) 20px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: clamp(32px, 8vw, 48px);
+            margin-bottom: 10px;
+            padding: 0 10px;
+            opacity: 0;
+        }
+        
+        body.dark-mode h1 {
+            color: #fff;
+        }
+        
+        body.light-mode h1 {
+            color: #1a1a1a;
+        }
+        
+        .album-info {
+            font-size: clamp(16px, 4vw, 18px);
+            padding: 0 15px;
+            opacity: 0;
+        }
+        
+        body.dark-mode .album-info {
+            color: #ccc;
+        }
+        
+        body.light-mode .album-info {
+            color: #555;
+        }
+        
+        .description {
+            margin-top: 30px;
+            max-width: 700px;
+            width: 90%;
+            line-height: 1.8;
+            font-size: clamp(16px, 4vw, 18px);
+            padding: 0 10px;
+            opacity: 0;
+        }
+        
+        body.dark-mode .description {
+            color: #fff;
+        }
+        
+        body.light-mode .description {
+            color: #1a1a1a;
+        }
+        
+        .review-button {
+            margin-top: 40px;
+            padding: clamp(12px, 3vw, 14px) clamp(24px, 6vw, 32px);
+            background: #c9a24d;
+            color: #000;
+            text-decoration: none;
+            font-size: clamp(16px, 4vw, 18px);
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+            opacity: 0;
+        }
+        
+        .review-button:hover {
+            background: #d4ad5e;
+        }
+        
+        .error-message {
+            color: #c9a24d;
+            font-size: 24px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="overlay">
+        <div class="header">
+            <div class="header-left">
+                <a href="milicatalog.html" class="back-link">&larr; Back to Catalog</a>
+                <a href="mili.html" class="home-link">Home</a>
+            </div>
+            <div class="header-right">
+                <button class="favorite-btn" id="favoriteBtn">☆ Favorite</button>
+                <button class="theme-toggle">🌙 Dark Mode</button>
+            </div>
+        </div>
+        
+        <div class="content" id="songContent">
+            <h1 id="songTitle"></h1>
+            <p class="album-info" id="songInfo"></p>
+            <div class="description" id="songDesc"></div>
+            <a href="#" class="review-button" id="reviewLink">Read Full Review</a>
+        </div>
+        
+        <div class="content" id="errorContent" style="display:none;">
+            <h1>Song Not Found</h1>
+            <p class="error-message">The requested song could not be found.</p>
+            <a href="milicatalog.html" class="review-button" style="margin-top: 30px; opacity: 1;">
+                Return to Catalog
+            </a>
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function(){
+        var theme = localStorage.getItem('theme') || 'dark';
+        $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
+        $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+        
+        $('.theme-toggle').click(function(){
+            if($('body').hasClass('dark-mode')) {
+                $('body').removeClass('dark-mode').addClass('light-mode');
+                $(this).text('☀️ Light Mode');
+                localStorage.setItem('theme', 'light');
+            } else {
+                $('body').removeClass('light-mode').addClass('dark-mode');
+                $(this).text('🌙 Dark Mode');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        var slug = new URLSearchParams(window.location.search).get('song');
+        
+        $.getJSON('data.json', function(data) {
+            var song = data.songs.find(function(s) { return s.slug === slug; });
+            
+            if (song) {
+                if (song.background_image) {
+                    $('body').css('background-image', 'url(' + song.background_image + ')');
+                }
+                
+                document.title = song.title;
+                $('#songTitle').text(song.title);
+                $('#songInfo').text(song.album + (song.year ? ' • ' + song.year : ''));
+                $('#songDesc').text(song.description || '');
+                $('#reviewLink').attr('href', 'songreview.html?song=' + song.slug);
+                
+                $('#songTitle').animate({opacity: 1}, 800);
+                $('#songInfo').delay(200).animate({opacity: 1}, 800);
+                $('#songDesc').delay(400).animate({opacity: 1}, 800);
+                $('#reviewLink').delay(600).animate({opacity: 1}, 800);
+            } else {
+                $('#songContent').hide();
+                $('#errorContent').show();
+                $('.favorite-btn').hide();
+            }
+            
+            if (song) {
+                var favorites = JSON.parse(localStorage.getItem('miliFavorites') || '[]');
+                
+                if(favorites.indexOf(song.slug) > -1) {
+                    $('#favoriteBtn').addClass('favorited').text('★ Favorited');
+                }
+                
+                $('#favoriteBtn').click(function(){
+                    var favorites = JSON.parse(localStorage.getItem('miliFavorites') || '[]');
+                    
+                    if($(this).hasClass('favorited')) {
+                        favorites = favorites.filter(function(s){ return s !== song.slug; });
+                        $(this).removeClass('favorited').text('☆ Favorite');
+                    } else {
+                        favorites.push(song.slug);
+                        $(this).addClass('favorited').text('★ Favorited');
+                    }
+                    
+                    localStorage.setItem('miliFavorites', JSON.stringify(favorites));
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>

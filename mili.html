@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Kantahan & Jamming Club</title>
+    <script src="jquery-4.0.0.js"></script>
+</head>
+<body class="dark-mode" style="margin:0; font-family:Georgia, serif; color:#eee; background-image:url('milicovers.jpg'); background-size:cover; background-position:center; background-attachment:fixed; background-repeat:no-repeat; min-height:100vh;">
+
+<div class="overlay" style="min-height:100vh; display:flex; flex-direction:column;">
+
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:15px 20px; border-bottom:1px solid #444; gap:10px;">
+        <div style="display:flex; justify-content:flex-end; width:100%;">
+            <button class="theme-toggle" style="background:#2a2a35; color:#c9a24d; border:1px solid #c9a24d; padding:8px 16px; border-radius:20px; font-size:14px; cursor:pointer;">🌙 Dark Mode</button>
+        </div>
+        <div style="font-size:clamp(20px, 5vw, 26px); letter-spacing:2px; font-weight:normal;">Kantahan & Jamming Club</div>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+            <a href="milicatalog.html" style="color:#c9a24d; text-decoration:none; font-size:clamp(16px, 4vw, 18px);">Song Catalog</a>
+        </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:clamp(40px, 15vh, 100px) 20px; text-align:center; flex:1;">
+        
+        <h1 style="font-size:clamp(32px, 8vw, 48px); margin-bottom:20px; line-height:1.2; padding:0 10px;" class="fade-in">A Personal Archive of Mili</h1>
+        
+        <p style="max-width:600px; width:90%; line-height:1.8; color:#bbb; font-size:clamp(16px, 4vw, 18px); margin-bottom:20px;" class="fade-in-delay">
+            A curated blog where I review and analyze songs by Mili. Themes, symbolism, orchestration, and emotional impact.
+        </p>
+        
+        <p style="max-width:600px; width:90%; line-height:1.8; color:#c9a24d; font-size:clamp(14px, 3.5vw, 16px); margin-bottom:40px;" class="fade-in-delay">
+            Featuring tracks from Library of Ruina, Limbus Company, and their original albums.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:15px; width:100%; align-items:center;">
+            <a href="milicatalog.html" class="browse-btn" style="padding:clamp(12px, 3vw, 14px) clamp(24px, 6vw, 32px); background:#c9a24d; color:#000; text-decoration:none; font-size:clamp(16px, 4vw, 18px); font-weight:bold; border-radius:6px; display:inline-block; width:200px; text-align:center;">Browse Songs</a>
+            
+            <a href="miliprofile.html" class="about-btn" style="padding:clamp(12px, 3vw, 14px) clamp(24px, 6vw, 32px); background:transparent; color:#c9a24d; text-decoration:none; font-size:clamp(16px, 4vw, 18px); font-weight:bold; border-radius:6px; display:inline-block; border:2px solid #c9a24d; width:200px; text-align:center;">About Mili</a>
+        </div>
+    </div>
+    
+    <div style="text-align:center; padding:20px; color:#666; font-size:12px;">
+        <span class="song-count"></span> &bull; <span class="latest-update"></span>
+    </div>
+
+</div>
+
+<style>
+    body.light-mode {
+        color: #1a1a1a !important;
+    }
+    body.light-mode .overlay {
+        background: rgba(255, 255, 255, 0.85) !important;
+    }
+    body.light-mode h1,
+    body.light-mode p {
+        color: #1a1a1a !important;
+    }
+    body.light-mode .about-btn {
+        color: #c9a24d !important;
+    }
+    body.light-mode .theme-toggle {
+        background: #f0f0f0 !important;
+        color: #c9a24d !important;
+    }
+    .overlay {
+        background: rgba(0, 0, 0, 0.75);
+    }
+    body.dark-mode .overlay {
+        background: rgba(0, 0, 0, 0.75);
+    }
+</style>
+
+<script>
+$(document).ready(function(){
+    var theme = localStorage.getItem('theme') || 'dark';
+    $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
+    $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+    
+    $('.theme-toggle').click(function(){
+        if($('body').hasClass('dark-mode')) {
+            $('body').removeClass('dark-mode').addClass('light-mode');
+            $(this).text('☀️ Light Mode');
+            localStorage.setItem('theme', 'light');
+        } else {
+            $('body').removeClass('light-mode').addClass('dark-mode');
+            $(this).text('🌙 Dark Mode');
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+    
+    $('.fade-in').hide().fadeIn(1000);
+    $('.fade-in-delay').hide().delay(300).fadeIn(800);
+    
+    $('.browse-btn').hover(
+        function(){ $(this).css({'background':'#d4ad5e', 'transition':'0.3s'}); },
+        function(){ $(this).css({'background':'#c9a24d', 'transition':'0.3s'}); }
+    );
+    
+    $('.about-btn').hover(
+        function(){ $(this).css({'background':'#c9a24d', 'color':'#000', 'transition':'0.3s'}); },
+        function(){ $(this).css({'background':'transparent', 'color':'#c9a24d', 'transition':'0.3s'}); }
+    );
+    
+    $.getJSON('data.json', function(data) {
+        var count = data.songs.length;
+        $('.song-count').text(count + ' songs in catalog');
+    });
+    
+    $('.latest-update').text('Updated 2026');
+});
+</script>
+
+</body>
+</html>

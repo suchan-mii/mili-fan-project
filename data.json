@@ -1,0 +1,232 @@
+{
+  "songs": [
+    {
+      "id": 1,
+      "slug": "string-theocracy",
+      "title": "String Theocracy",
+      "album": "To Kill a Living Book: for Library Of Ruina",
+      "year": 2020,
+      "genre": "Orchestral",
+      "description": "A powerful orchestral piece blending sweeping string sections with electronic elements. The song builds tension through layered instrumentation and dynamic shifts between quiet passages and thunderous crescendos.",
+      "background_image": "https://i.scdn.co/image/ab67616d0000b273de0ccf861288572e59116194",
+      "cover_image": "https://i.scdn.co/image/ab67616d0000b273de0ccf861288572e59116194",
+      "review": {
+        "rating": 10,
+        "composition": "The orchestration features sweeping string sections that evoke a sense of grandeur and solemnity. The tempo shifts between slow, deliberate passages and faster, more intense sections. Instrumentation includes violins, cellos, piano, and electronic synthesizers. The vocal layering adds depth, with harmonies that create an ethereal quality. Dynamics range from whisper-quiet moments to powerful crescendos that command attention.",
+        "lyrics": "The lyrics explore themes of power, divinity, and control. References to religious imagery and theocracy create a narrative about those who claim divine authority. The song questions the nature of belief and the structures that govern society. Literary allusions to mythological and biblical texts add layers of meaning.",
+        "emotional": "The song evokes feelings of awe, reverence, and subtle unease. The combination of beautiful melodies with darker undertones creates emotional complexity. It inspires introspection about authority and personal belief systems.",
+        "final_thoughts": "\"String Theocracy\" stands as one of Mili's most ambitious compositions. It compares favorably to their other orchestral works, showing growth in compositional complexity. A masterpiece that rewards repeated listening with new discoveries each time.",
+        "youtube_url": "https://www.youtube.com/watch?v=nOj_A3aZxGs"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "from-a-place-of-love",
+      "title": "From a Place of Love",
+      "album": "From a Place of Love",
+      "year": 2020,
+      "genre": "Ballad",
+      "description": "A tender piano-driven ballad with gentle string accompaniment. The intimate vocal performance and sparse arrangement create a warm, emotional atmosphere that builds gradually to a heartfelt climax.",
+      "background_image": "https://i.scdn.co/image/ab67616d0000b273cdeb72fde7f257c63dec0d79",
+      "cover_image": "https://i.scdn.co/image/ab67616d0000b273cdeb72fde7f257c63dec0d79",
+      "review": {
+        "rating": 10,
+        "composition": "The composition features a delicate piano melody that serves as the foundation. Strings enter gradually, adding warmth without overwhelming the intimate atmosphere. The vocal performance is nuanced and deeply felt, with subtle layering in the chorus that adds emotional weight. The arrangement builds gently, reaching an emotional peak before resolving peacefully.",
+        "lyrics": "The lyrics speak of unconditional love and sacrifice. Themes of protection, devotion, and the willingness to give everything for another person run throughout. The song explores love not as romantic ideal but as active choice and commitment, even when that choice leads to pain.",
+        "emotional": "The song evokes deep feelings of warmth, nostalgia, and gentle sorrow. It creates space for reflection on personal relationships and the nature of love. Many listeners report feeling both comforted and moved to tears by the sincerity of the delivery.",
+        "final_thoughts": "\"From A Place Of Love\" demonstrates Mili's ability to create profound emotional impact with seemingly simple elements. It stands as one of their most beloved tracks and a highlight of the Library of Ruina soundtrack. The song's gentle power lies in its honesty and vulnerability.",
+        "youtube_url": "https://www.youtube.com/watch?v=xyx8DMlUAQ4"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "hero",
+      "title": "Hero",
+      "album": "Hero",
+      "year": 2024,
+      "genre": "Ballad",
+      "description": "A delicate piano melody forms the foundation of this track, supported by warm strings and subtle electronic textures. The vocals are intimate and nuanced, with layered harmonies in the chorus.",
+      "background_image": "https://f4.bcbits.com/img/a0394238492_10.jpg",
+      "cover_image": "https://f4.bcbits.com/img/a0394238492_10.jpg",
+      "review": {
+        "rating": 10,
+        "composition": "A delicate piano melody forms the foundation, supported by warm strings that enter gradually. The vocal performance is intimate and restrained, with beautiful harmonies that bloom in the chorus. The arrangement is carefully paced, allowing each element room to breathe while building toward an emotionally satisfying conclusion.",
+        "lyrics": "The lyrics examine the weight of being someone's hero and the complexity of that role. Themes of sacrifice, expectation, and the human need for connection are woven throughout. The song questions what it truly means to save someone and whether anyone can bear that burden alone.",
+        "emotional": "There is a bittersweet quality that permeates the entire track. The music creates space for both hope and melancholy to coexist. It resonates deeply with anyone who has felt the pressure of being needed while struggling with their own limitations.",
+        "final_thoughts": "\"Hero\" showcases Mili's talent for finding universal truth in specific narratives. The song connects to its source material while standing firmly on its own as a meditation on human connection. A beautiful, understated masterpiece.",
+        "youtube_url": "https://www.youtube.com/watch?v=ZuifkacZ0TA"
+      }
+    },
+    {
+      "id": 4,
+      "slug": "through-patches-of-violet",
+      "title": "Through Patches of Violet",
+      "album": "Through Patches of Violet",
+      "year": 2024,
+      "genre": "Duet",
+      "description": "A dynamic duet featuring alternating male and female vocal parts. The arrangement combines piano, strings, and electronic elements, building from gentle verses to an emotionally charged climax.",
+      "background_image": "https://f4.bcbits.com/img/a1668056311_10.jpg",
+      "cover_image": "https://f4.bcbits.com/img/a1668056311_10.jpg",
+      "review": {
+        "rating": 10,
+        "composition": "This duet features alternating male and female vocal parts that weave together in the final act. The piano provides a steady foundation while strings and electronic elements build tension throughout. The arrangement grows from gentle beginnings to a powerful, emotionally charged climax where both voices finally unite.",
+        "lyrics": "The lyrics follow two perspectives that circle each other without quite connecting. Themes of misaligned hearts, missed connections, and the tragedy of near-understanding run throughout. The final convergence is both beautiful and devastating.",
+        "emotional": "The song creates a profound sense of longing and bittersweet resolution. The interplay between voices mirrors the human experience of reaching for connection. There is catharsis in the climax, even as it acknowledges the pain inherent in truly seeing another person.",
+        "final_thoughts": "\"Through Patches of Violet\" represents Mili at their most emotionally ambitious. The duet structure allows for complex emotional territory that few songs attempt. It stands as a crowning achievement in their Limbus Company work and a testament to their artistic growth.",
+        "youtube_url": "https://www.youtube.com/watch?v=G_JfKOjwzwo"
+      }
+    },
+    {
+      "id": 5,
+      "slug": "saikai",
+      "title": "SAIKAI",
+      "album": "SAIKAI",
+      "year": 2026,
+      "genre": "Pop",
+      "description": "A bright, melodic track with layered vocal harmonies and a driving rhythm section. The arrangement blends acoustic and electronic elements with an uplifting, anthemic quality.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/0CggdVXN3wvE8HOgOUGhEMkdPESumUQD57SAVXV6vcvsx_bptT7r6w1Rd8sMXn_ZDyXHseziTPmHmNn5lA=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "A bright, melodic track driven by layered vocal harmonies and a propulsive rhythm section. The arrangement skillfully blends acoustic instruments with electronic production, creating a sound that feels both organic and polished. The chorus soars with anthemic energy while verses maintain intimate momentum.",
+        "lyrics": "The Japanese title \"SAIKAI\" means reunion, and the lyrics explore the threads that connect people across time and distance. Themes of memory, enduring bonds, and the hope of meeting again are woven throughout. There is warmth in the acknowledgment that some connections cannot be broken.",
+        "emotional": "The song radiates warmth and gentle optimism. It captures the bittersweet joy of reunion and the comfort of knowing certain bonds persist despite separation. There is a sense of peace in its resolution.",
+        "final_thoughts": "\"SAIKAI\" continues Mili's tradition of finding universal emotion in specific contexts. The song's warmth and sincerity make it instantly memorable. A beautiful addition to their catalog that rewards repeated listening.",
+        "youtube_url": "https://www.youtube.com/watch?v=h0djuhl97Kw"
+      }
+    },
+    {
+      "id": 6,
+      "slug": "tian-tian",
+      "title": "TIAN TIAN",
+      "album": "TIAN TIAN",
+      "year": 2025,
+      "genre": "Acoustic",
+      "description": "A gentle Chinese-language piece with playful vocalizations and a light, bouncy arrangement. The warm acoustic guitar and soft percussion create an intimate, comforting atmosphere.",
+      "background_image": null,
+      "cover_image": "https://f4.bcbits.com/img/a0249310819_10.jpg",
+      "review": {
+        "rating": 10,
+        "composition": "A gentle Chinese-language piece carried by warm acoustic guitar and soft percussion. The vocal performance is playful and intimate, with delightful melodic turns and light vocalizations that add character. The arrangement remains sparse and supportive, allowing the voice to shine.",
+        "lyrics": "The lyrics embrace a philosophy of living kindly in the present moment. Themes of appreciating small joys, treating others with gentleness, and finding peace in everyday existence run throughout. There is wisdom in its simplicity.",
+        "emotional": "The song feels like a warm embrace. It creates a sense of calm and contentment, reminding listeners that peace can be found in small moments. The gentle delivery makes the message feel personal and sincere.",
+        "final_thoughts": "\"TIAN TIAN\" demonstrates Mili's versatility across languages and styles. The song's gentle power comes from its sincerity and warmth. A quiet gem that grows more meaningful with each listen.",
+        "youtube_url": "https://www.youtube.com/watch?v=szyPY8nbBF4"
+      }
+    },
+    {
+      "id": 7,
+      "slug": "fly-my-wings",
+      "title": "Fly, My Wings",
+      "album": "Fly, My Wings",
+      "year": 2023,
+      "genre": "Dream Pop",
+      "description": "A dreamy track featuring idyllic, childlike melodies and rich vocal harmonies. The arrangement layers acoustic instruments with subtle electronic textures, creating a sense of innocence and wonder.",
+      "background_image": null,
+      "cover_image": "https://f4.bcbits.com/img/a3873138468_10.jpg",
+      "review": {
+        "rating": 10,
+        "composition": "A dreamy track featuring idyllic, childlike melodies and rich vocal harmonies. The arrangement layers acoustic instruments with subtle electronic textures, creating a sense of innocence and wonder. The production is clean and spacious, allowing each element to breathe.",
+        "lyrics": "The lyrics explore brokenness and the pursuit of an ideal self. Themes of fragmentation, aspiration, and the gap between who we are and who we wish to become are examined with sensitivity. There is hope in the striving, even when the goal seems distant.",
+        "emotional": "The song evokes a tender melancholy tempered by gentle hope. It captures the vulnerability of wanting to be better and the courage required to keep reaching. The childlike quality of the melody adds poignancy to the mature themes.",
+        "final_thoughts": "\"Fly, My Wings\" is a beautiful meditation on growth and self-acceptance. The song finds Mili exploring complex emotional territory with grace and sensitivity. A standout track that reveals new depths with each listen.",
+        "youtube_url": "https://www.youtube.com/watch?v=_PSjoVXFGAQ"
+      }
+    },
+    {
+      "id": 8,
+      "slug": "grown-ups-paradise",
+      "title": "Grown Up's Paradise",
+      "album": "Grown Up's Paradise",
+      "year": 2024,
+      "genre": "Nostalgia",
+      "description": "A nostalgic piece contrasting simple melodic lines with complex instrumental layers. The arrangement features piano, strings, and electronic elements that swell and recede like memories.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/gFAe_CR3fh4GRUsJIPuj7VxJ2IhoI-MVzTqnHCU9NGMOOmGTrAkqChuQwKXhWbAZR1qeqMRt7MEUvAiL4w=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "A nostalgic piece contrasting simple melodic lines with increasingly complex instrumental layers. The arrangement features piano, strings, and electronic elements that swell and recede like memories. The production creates a dreamlike quality, with sounds that feel both immediate and distant.",
+        "lyrics": "The lyrics contrast childhood innocence with the complexities of adult life. Themes of lost simplicity, the weight of growing up, and longing for easier times are explored. There is bittersweet acknowledgment that we cannot return, only remember.",
+        "emotional": "The song creates a powerful sense of nostalgia and gentle grief for what has been lost. It resonates deeply with anyone who has felt the distance between childhood and adulthood. There is comfort in the shared recognition of this universal experience.",
+        "final_thoughts": "\"Grown Up's Paradise\" captures a feeling that is difficult to articulate but immediately recognizable. Mili translates complex emotional territory into music with remarkable skill. A beautiful, bittersweet masterpiece.",
+        "youtube_url": "https://www.youtube.com/watch?v=KawV_oK6lIc"
+      }
+    },
+    {
+      "id": 9,
+      "slug": "in-hell-we-live-lament",
+      "title": "In Hell We Live, Lament",
+      "album": "In Hell We Live, Lament (feat. KIHOW)",
+      "year": 2021,
+      "genre": "Rock/Electronic",
+      "description": "An intense, driving track with rock and electronic elements. The powerful vocals, distorted guitars, and pulsing synths create an aggressive, high-energy atmosphere with moments of melodic respite.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/uvfnf3-fUEFnsOe_R8sYaSwb7Vduf5NfLCEfvLXGWFWABH_6EihSex4uFHExOwfRhtQLlPYOOx4XlH73=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "An intense, driving track built on rock and electronic foundations. Distorted guitars and pulsing synths create an aggressive, high-energy atmosphere, while melodic respites offer moments of clarity. The powerful vocal performance matches the instrumental intensity, with KIHOW's feature adding dynamic range.",
+        "lyrics": "The lyrics explore cyclical existence, suffering, and the nature of hell and home. Themes of endless return, finding meaning in struggle, and the thin line between damnation and belonging are examined. There is dark beauty in the acknowledgment of this cycle.",
+        "emotional": "The song creates a visceral sense of desperate energy and grim determination. It captures the experience of fighting against overwhelming odds while knowing the battle may never truly end. There is catharsis in the intensity.",
+        "final_thoughts": "\"In Hell We Live, Lament\" stands as one of Mili's most intense and ambitious tracks. The collaboration with KIHOW adds new dimension to their sound. A powerful, unforgettable piece that commands attention.",
+        "youtube_url": "https://www.youtube.com/watch?v=XfTWgMgknpY"
+      }
+    },
+    {
+      "id": 10,
+      "slug": "what-the-ripple-sees",
+      "title": "What The Ripple Sees",
+      "album": "What The Ripple Sees",
+      "year": 2025,
+      "genre": "Ambient",
+      "description": "A gentle, atmospheric piece with soft piano, delicate strings, and ethereal vocals. The sparse arrangement and flowing melody create a calm, meditative quality like ripples on still water.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/lZGoaIMBGcYeoH19n2eZWFYpnMbQI8n591TxVf83hjX29lKigHZ96j53r2nJdRZqizut_gBHD8frUk8=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "A gentle, atmospheric piece built on soft piano and delicate strings. The sparse arrangement creates space for ethereal vocals to float above the instrumentation. The melody flows like water, with subtle shifts in dynamics that mirror ripples on a still surface.",
+        "lyrics": "The lyrics speak of quiet guardianship and love without possession. Themes of unseen support, hope across distance, and the beauty of letting go are woven throughout. There is profound wisdom in its gentleness.",
+        "emotional": "The song creates a deep sense of peace and quiet wonder. It feels like being watched over by something kind and patient. The gentle delivery makes space for personal reflection and emotional release.",
+        "final_thoughts": "\"What The Ripple Sees\" demonstrates Mili's mastery of quiet power. The song proves that profound emotion does not require volume or intensity. A beautiful, meditative piece that rewards attentive listening.",
+        "youtube_url": "https://www.youtube.com/watch?v=Jx7nt0qeLF8"
+      }
+    },
+    {
+      "id": 11,
+      "slug": "ripples-of-past-reverie",
+      "title": "Ripples of Past Reverie",
+      "album": "Ripples of Past Reverie",
+      "year": 2025,
+      "genre": "Ambient",
+      "description": "A dreamlike track with hazy textures and layered vocals. The arrangement features ambient electronic elements, soft percussion, and melodic lines that echo and overlap.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/zxFn3xAjZ1xDqGAEXg-FM5tQ5BMD0heasV6R-YJlKsFdIKE7-7Qd7y8U9OhMR5OWc54FbXIRuPtjHJvv=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "A dreamlike track characterized by hazy textures and layered vocals. The arrangement features ambient electronic elements, soft percussion, and melodic lines that echo and overlap. The production creates a sense of drifting through memory, with sounds that feel familiar yet distant.",
+        "lyrics": "The lyrics explore the resonance of past moments and the way memories linger. Themes of lingering connection, the persistence of feeling, and the echoes we leave behind are examined with sensitivity.",
+        "emotional": "The song evokes a gentle, wistful melancholy. It captures the experience of being touched by memories that surface unexpectedly. There is comfort in the acknowledgment that some connections persist beyond their time.",
+        "final_thoughts": "\"Ripples of Past Reverie\" continues Mili's exploration of memory and connection. The dreamlike quality of the arrangement perfectly supports the lyrical themes. A beautiful, contemplative piece.",
+        "youtube_url": "https://www.youtube.com/watch?v=I7MNqnkTRKc"
+      }
+    },
+    {
+      "id": 12,
+      "slug": "compass",
+      "title": "Compass",
+      "album": "Compass",
+      "year": 2023,
+      "genre": "Ballad",
+      "description": "A melodic, mid-tempo piece with clear piano lines and warm string accompaniment. The arrangement is clean and directional, with steady percussion providing a gentle sense of movement.",
+      "background_image": null,
+      "cover_image": "https://lh3.googleusercontent.com/Bfch_1zKk7t71w1eBMrkhbTGsYItVOpKlCnuAgLOfcyXRSkFEMKjlzEEvpm4v0WwLr8u2rusNHnMeCavMw=w544-h544-l90-rj",
+      "review": {
+        "rating": 10,
+        "composition": "A melodic, mid-tempo piece anchored by clear piano lines and warm string accompaniment. The arrangement is clean and directional, with steady percussion providing a gentle sense of movement. The vocal performance is earnest and direct, carrying the melody with conviction.",
+        "lyrics": "The lyrics explore finding one's path and moral grounding. Themes of direction, purpose, and the inner compass that guides us are examined. There is strength in the quiet certainty of knowing one's way.",
+        "emotional": "The song creates a sense of grounded hope and gentle determination. It feels like finding solid ground after a period of uncertainty. The steady rhythm and clear melody provide comfort and reassurance.",
+        "final_thoughts": "\"Compass\" showcases Mili's ability to find profound meaning in simple, direct expression. The song's strength lies in its clarity and sincerity. A beautiful addition to their catalog that points the way forward.",
+        "youtube_url": "https://www.youtube.com/watch?v=92E0X59wzeg"
+      }
+    }
+  ]
+}
