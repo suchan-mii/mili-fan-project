@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" type="image/png" href="mililogo.png">
     <title id="pageTitle">Review</title>
     <script src="jquery-4.0.0.js"></script>
     <style>
@@ -299,7 +300,7 @@
                 <a href="mili.html" class="home-link">Home</a>
             </div>
             <div class="header-right" id="headerRight">
-                <button class="theme-toggle">🌙 Dark Mode</button>
+                <button class="theme-toggle">☀️ Light Mode</button>
             </div>
         </div>
         
@@ -333,16 +334,16 @@
     $(document).ready(function(){
         var theme = localStorage.getItem('theme') || 'dark';
         $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
-        $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+        $('.theme-toggle').text(theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode');
         
         $('.theme-toggle').click(function(){
             if($('body').hasClass('dark-mode')) {
                 $('body').removeClass('dark-mode').addClass('light-mode');
-                $(this).text('☀️ Light Mode');
+                $(this).text('🌙 Dark Mode');
                 localStorage.setItem('theme', 'light');
             } else {
                 $('body').removeClass('light-mode').addClass('dark-mode');
-                $(this).text('🌙 Dark Mode');
+                $(this).text('☀️ Light Mode');
                 localStorage.setItem('theme', 'dark');
             }
         });

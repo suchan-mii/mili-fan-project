@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" type="image/png" href="mililogo.png">
     <title>Kantahan & Jamming Club</title>
     <script src="jquery-4.0.0.js"></script>
 </head>
@@ -12,7 +13,7 @@
 
     <div style="display:flex; flex-direction:column; align-items:center; text-align:center; padding:15px 20px; border-bottom:1px solid #444; gap:10px;">
         <div style="display:flex; justify-content:flex-end; width:100%;">
-            <button class="theme-toggle" style="background:#2a2a35; color:#c9a24d; border:1px solid #c9a24d; padding:8px 16px; border-radius:20px; font-size:14px; cursor:pointer;">🌙 Dark Mode</button>
+            <button class="theme-toggle" style="background:#2a2a35; color:#c9a24d; border:1px solid #c9a24d; padding:8px 16px; border-radius:20px; font-size:14px; cursor:pointer;">☀️ Light Mode</button>
         </div>
         <div style="font-size:clamp(20px, 5vw, 26px); letter-spacing:2px; font-weight:normal;">Kantahan & Jamming Club</div>
         <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
@@ -75,16 +76,16 @@
 $(document).ready(function(){
     var theme = localStorage.getItem('theme') || 'dark';
     $('body').removeClass('dark-mode light-mode').addClass(theme + '-mode');
-    $('.theme-toggle').text(theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode');
+    $('.theme-toggle').text(theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode');
     
     $('.theme-toggle').click(function(){
         if($('body').hasClass('dark-mode')) {
             $('body').removeClass('dark-mode').addClass('light-mode');
-            $(this).text('☀️ Light Mode');
+            $(this).text('🌙 Dark Mode');
             localStorage.setItem('theme', 'light');
         } else {
             $('body').removeClass('light-mode').addClass('dark-mode');
-            $(this).text('🌙 Dark Mode');
+            $(this).text('☀️ Light Mode');
             localStorage.setItem('theme', 'dark');
         }
     });
