@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <link rel="icon" type="image/jpeg" href="milicovers.jpg">
     <title>Mili Song Catalog</title>
     <script src="jquery-4.0.0.js"></script>
     <style>
@@ -56,7 +57,7 @@
             gap: 10px;
         }
         
-        .home-link, .home-link-alt {
+        .home-link {
             color: #000;
             background: #c9a24d;
             text-decoration: none;
@@ -70,21 +71,6 @@
         
         .home-link:hover {
             background: #d4ad5e;
-        }
-        
-        .home-link-alt {
-            background: #2a2a35;
-            color: #c9a24d;
-            border: 1px solid #c9a24d;
-        }
-        
-        body.light-mode .home-link-alt {
-            background: #e0e0e0;
-        }
-        
-        .home-link-alt:hover {
-            background: #c9a24d;
-            color: #000;
         }
         
         .filter-btn {
@@ -266,7 +252,6 @@
         <div class="header">
             <div class="header-left">
                 <a href="mili.html" class="home-link">&larr; Back to Home</a>
-                <a href="mili.html" class="home-link-alt">Home</a>
             </div>
             <div class="header-right">
                 <input type="text" class="search-box" placeholder="Search songs...">
